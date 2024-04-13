@@ -277,12 +277,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 720}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -454,7 +454,7 @@ MonoBehaviour:
     rgba: 4290736637
   hoverColor:
     serializedVersion: 2
-    rgba: 4288453788
+    rgba: 4293049855
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -488,6 +488,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &588221001
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +612,7 @@ MonoBehaviour:
     rgba: 4284612465
   hoverColor:
     serializedVersion: 2
-    rgba: 4288453788
+    rgba: 4291166112
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -645,6 +646,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,7 +791,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 38.5
   orthographic: 0
   orthographic size: 1.19
   m_Depth: -1
@@ -945,7 +947,7 @@ MonoBehaviour:
     rgba: 4294833265
   hoverColor:
     serializedVersion: 2
-    rgba: 4288453788
+    rgba: 4294966475
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -979,6 +981,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &1134778397
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1105,7 @@ MonoBehaviour:
     rgba: 4282871295
   hoverColor:
     serializedVersion: 2
-    rgba: 4282598211
+    rgba: 4283058835
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -1136,6 +1139,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &1237591962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1193,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd7f766bf5d8c1b4a98a097933777160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
+  keys:
+  - {fileID: 588221006}
+  - {fileID: 1607100970}
+  - {fileID: 1936931454}
+  - {fileID: 1134778402}
+  - {fileID: 405182064}
+  - {fileID: 1993168648}
+  - {fileID: 1891015175}
+  - {fileID: 1018295016}
+  detunedNotes:
+  - {fileID: 8300000, guid: 58d792ec9397ac84982177cf4729315d, type: 3}
+  - {fileID: 8300000, guid: 6424e04c9a0596a4a87774e3bb9ce62a, type: 3}
+  - {fileID: 8300000, guid: adfa49bf411324441813ca8cc02a5bfb, type: 3}
+  - {fileID: 8300000, guid: 5bc5d4cac4c4b574cab03f784cd52f99, type: 3}
+  - {fileID: 8300000, guid: d15a562c8647b174096d31534900b831, type: 3}
+  - {fileID: 8300000, guid: 58c76fd0f1c1599478b49f04029233c1, type: 3}
+  - {fileID: 8300000, guid: 827ba76aef9f2034696d370bf8af25dd, type: 3}
+  - {fileID: 8300000, guid: 4dcfbfaed63110e47804dec1eb9c7c07, type: 3}
+  mediumNotes:
+  - {fileID: 8300000, guid: e8d2a267345e0674b9dc09063aaf50f2, type: 3}
+  - {fileID: 8300000, guid: 0e031bd93237a1f469b3266c8f6aef34, type: 3}
+  - {fileID: 8300000, guid: ad8a67985370f69439df2f2f8fb817d7, type: 3}
+  - {fileID: 8300000, guid: e44446c8b72364c4c90037bcccceb40f, type: 3}
+  - {fileID: 8300000, guid: 683e6ffc036165049a645c6070d67cea, type: 3}
+  - {fileID: 8300000, guid: 269f908a4fe6a5242bccaca4b3b432aa, type: 3}
+  - {fileID: 8300000, guid: 279079abdf3a58b4fbb468c5d220923a, type: 3}
+  - {fileID: 8300000, guid: d523c54a9916da54994cfba007e82db6, type: 3}
+  goodNotes:
+  - {fileID: 8300000, guid: 3dde438698a54e7439181fab4264b9a4, type: 3}
+  - {fileID: 8300000, guid: 2eb965379c857db4485ee1f396a401cd, type: 3}
+  - {fileID: 8300000, guid: c5c9159c4d3b36744a88c74279e867af, type: 3}
+  - {fileID: 8300000, guid: 6c6bef33e588dc34f9d1a3bb2e8bf83c, type: 3}
+  - {fileID: 8300000, guid: 7fba11352a234bc44b5d8b4821ee5b3b, type: 3}
+  - {fileID: 8300000, guid: abd38770ff87e014bb5465b5a00cfef9, type: 3}
+  - {fileID: 8300000, guid: 43640a35cc4cb8a419f820df4388cbc4, type: 3}
+  - {fileID: 8300000, guid: 044b08d7c8a62eb4aac2c1688ae7fb09, type: 3}
+  successSound: {fileID: 8300000, guid: c44d1bdf9bcda2d41aef1d1b31158e31, type: 3}
+  failureSound: {fileID: 8300000, guid: 78929167aa339d341af5de6c1e816096, type: 3}
+  midDetuneLevel: 4
+  goodDetuneLevel: 6
+  currentDetuneLevel: 0
+  currentSequence: 
+  playerSequence: 
 --- !u!114 &1237591965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,7 +1308,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 38.5
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1417,7 +1465,7 @@ MonoBehaviour:
     rgba: 4285136888
   hoverColor:
     serializedVersion: 2
-    rgba: 4282598211
+    rgba: 4287543222
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -1451,6 +1499,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &1768891799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,7 +1691,7 @@ MonoBehaviour:
     rgba: 4294920022
   hoverColor:
     serializedVersion: 2
-    rgba: 4282598211
+    rgba: 4287645260
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -1676,6 +1725,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &1936931449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1849,7 @@ MonoBehaviour:
     rgba: 4283217663
   hoverColor:
     serializedVersion: 2
-    rgba: 4288453788
+    rgba: 4286831359
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -1833,6 +1883,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &1993168643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1956,7 +2007,7 @@ MonoBehaviour:
     rgba: 4294799797
   hoverColor:
     serializedVersion: 2
-    rgba: 4288453788
+    rgba: 4294949596
   pressCurve:
     serializedVersion: 2
     m_Curve:
@@ -1990,6 +2041,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isPressed: 0
 --- !u!1 &2058149075
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,8 @@ public class PianoKeyPresser : MonoBehaviour
 
         if (Input.GetMouseButton(0) && previousKey != null)
         {
-            previousKey.Press();
+            //previousKey.Press();
+            SequenceGenerator.instance.PlayNote(previousKey, true);
         }
     }
 }

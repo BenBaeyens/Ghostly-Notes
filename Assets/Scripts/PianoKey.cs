@@ -10,7 +10,7 @@ public class PianoKey : MonoBehaviour
     public AnimationCurve pressCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     private Color32 defaultColor = new Color32(255, 255, 255, 255);
 
-    private bool isPressed = false;
+    [HideInInspector] public bool isPressed = false;
     private float pressDuration = 1.0f;
 
     private Material material;
@@ -23,7 +23,7 @@ public class PianoKey : MonoBehaviour
 
     public void Press()
     {
-        if(isPressed)
+        if (isPressed)
         {
             return;
         }
@@ -53,7 +53,7 @@ public class PianoKey : MonoBehaviour
 
     private IEnumerator IPressAnimation(AnimationCurve pressCurve, float animationMagnifier, float pressDuration)
     {
-        pressDuration-= 0.1f;
+        pressDuration -= 0.1f;
         Vector3 originalPosition = transform.localPosition;
         float time = 0f;
 
@@ -61,11 +61,11 @@ public class PianoKey : MonoBehaviour
         {
             float displacement = (1 - pressCurve.Evaluate(time / pressDuration)) * animationMagnifier;
             transform.localPosition = originalPosition - new Vector3(0f, displacement, 0f);
-            
+
             time += Time.deltaTime;
             yield return null;
         }
-        
+
         // Reset the key to its original position after animation
         transform.localPosition = originalPosition;
     }
