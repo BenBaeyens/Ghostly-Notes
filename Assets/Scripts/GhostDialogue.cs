@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using System.Collections.Generic;
+
 public class GhostDialogue : MonoBehaviour
 {
     public Dictionary<GhostType, GhostComments> ghostComments = new Dictionary<GhostType, GhostComments>();
@@ -41,7 +43,7 @@ public class GhostDialogue : MonoBehaviour
             }
         });
 
-        ghostComments.Add(GhostType.Rock, new GhostComments
+        ghostComments.Add(GhostType.Rockstar, new GhostComments
         {
             positiveComments = new string[]
             {
@@ -139,5 +141,8 @@ public class GhostDialogue : MonoBehaviour
         return comments[randomIndex];
     }
 }
+
+
+
 
 
