@@ -13,6 +13,7 @@ public class PianoKeyPresser : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
+
             PianoKey key = hit.collider.GetComponent<PianoKey>();
             if (key != null)
             {
@@ -22,6 +23,11 @@ public class PianoKeyPresser : MonoBehaviour
                     key.Hover();
                 }
                 previousKey = key;
+            }
+            else if (previousKey != null)
+            {
+                previousKey.UnHover();
+                previousKey = null;
             }
         }
         else if (previousKey != null)

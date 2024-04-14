@@ -68,6 +68,12 @@ public class SequenceGenerator : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        instance = null;
+        StopAllCoroutines();
+    }
+
 
     public void GenerateSequence(int length)
     {

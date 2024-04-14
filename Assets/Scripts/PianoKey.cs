@@ -15,7 +15,7 @@ public class PianoKey : MonoBehaviour
 
     private Material material;
 
-    private void Start()
+    private void Awake()
     {
         material = GetComponent<Renderer>().material;
         defaultColor = material.color;
@@ -31,6 +31,11 @@ public class PianoKey : MonoBehaviour
         StartCoroutine(ITransitionColor(material, material.color, pressColor, 0.3f));
         StartCoroutine(IPressAnimation(pressCurve, 0.1f, pressDuration));
         StartCoroutine(IUnpressWaiter());
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 
     public void Hover()
