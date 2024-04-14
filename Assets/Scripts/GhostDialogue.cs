@@ -15,33 +15,33 @@ public class GhostDialogue : MonoBehaviour
 
     private void Awake()
     {
-        ghostComments.Add(GhostType.Disco, new GhostComments
-        {
-            positiveComments = new string[]
-            {
-                "Groovy! That's the vibe we're after! Let's keep the beats pumping and the dance floor rocking!",
-                "Oh, yeah! That's the funky stuff! Thanks for summoning me to the groove, buddy! With tunes like these, we're gonna light up the dance floor!"
-            },
-            negativeComments = new string[]
-            {
-                "Oh, come on now! That melody's more offbeat than a malfunctioning disco ball! Let's try to find our rhythm, okay?",
-                "Whoa, buddy! My dance moves just can't groove to that tune! Try again, and let's boogie properly!"
-            }
-        });
+        // ghostComments.Add(GhostType.Disco, new GhostComments
+        // {
+        //     positiveComments = new string[]
+        //     {
+        //         "Groovy! That's the vibe we're after! Let's keep the beats pumping and the dance floor rocking!",
+        //         "Oh, yeah! That's the funky stuff! Thanks for summoning me to the groove, buddy! With tunes like these, we're gonna light up the dance floor!"
+        //     },
+        //     negativeComments = new string[]
+        //     {
+        //         "Oh, come on now! That melody's more offbeat than a malfunctioning disco ball! Let's try to find our rhythm, okay?",
+        //         "Whoa, buddy! My dance moves just can't groove to that tune! Try again, and let's boogie properly!"
+        //     }
+        // });
 
-        ghostComments.Add(GhostType.Opera, new GhostComments
-        {
-            positiveComments = new string[]
-            {
-                "Magnificent! Your melody sings with the passion of a thousand arias! Together, we'll create music that moves souls.",
-                "Ah, my dear summoner, your melody fills me with joy! Thank you for bringing me forth to share in this musical journey. Together, we shall weave melodies that echo through eternity!"
-            },
-            negativeComments = new string[]
-            {
-                "Oh, the agony! Your performance feels like a tragic aria sung off-key. Please, let's strive for something more harmonious, shall we?",
-                "My dear player, your rendition has stirred not my soul, but my dismay. Pray, try a melody more melodious!"
-            }
-        });
+        // ghostComments.Add(GhostType.Opera, new GhostComments
+        // {
+        //     positiveComments = new string[]
+        //     {
+        //         "Magnificent! Your melody sings with the passion of a thousand arias! Together, we'll create music that moves souls.",
+        //         "Ah, my dear summoner, your melody fills me with joy! Thank you for bringing me forth to share in this musical journey. Together, we shall weave melodies that echo through eternity!"
+        //     },
+        //     negativeComments = new string[]
+        //     {
+        //         "Oh, the agony! Your performance feels like a tragic aria sung off-key. Please, let's strive for something more harmonious, shall we?",
+        //         "My dear player, your rendition has stirred not my soul, but my dismay. Pray, try a melody more melodious!"
+        //     }
+        // });
 
         ghostComments.Add(GhostType.Rockstar, new GhostComments
         {
