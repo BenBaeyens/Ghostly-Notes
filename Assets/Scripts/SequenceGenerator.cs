@@ -178,7 +178,7 @@ public class SequenceGenerator : MonoBehaviour
             currentDetuneLevel = 1;
         }
 
-        FindObjectOfType<GhostDialogue>().ShowCommentAndSpawnGhost(true);
+        FindObjectOfType<GhostDialogue>()?.ShowCommentAndSpawnGhost(true);
 
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayClipAtPoint(successSound, Camera.main.transform.position);
