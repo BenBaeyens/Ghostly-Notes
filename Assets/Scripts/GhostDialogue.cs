@@ -25,7 +25,7 @@ public class GhostDialogue : MonoBehaviour
     public void ShowCommentAndSpawnGhost(bool isCorrect)
     {
         ghostImageObject.SetActive(true);
-        
+
         // Randomly select a GhostType
         GhostType ghostType = (GhostType)Random.Range(0, ghostSprites.Length);
 
@@ -93,13 +93,13 @@ public class GhostDialogue : MonoBehaviour
         {
             positiveComments = new string[]
             {
-                "Whoa, that's what I'm talking about! Thanks for summoning me to rock out with you! With your talent and my spirit, we'll make musical history together!",
-                "Yeah! That's the spirit! Your music is like a thundering storm of power and passion! Let's keep the rock and roll alive!"
+                "Whoa, that's what I'm talking about! Thanks for summoning me to rock out with you!",
+                "Yeah! That's the spirit! Your music is like a thundering storm of power and passion!"
             },
             negativeComments = new string[]
             {
-                "Whoa, buddy! That tune's more out of tune than a broken guitar string! Let's dial it back and aim for some real rock 'n' roll magic, yeah?",
-                "Dude, seriously? My ears are bleeding! How about we stick to the classics? I'm all about the air guitar, but that was just noise!"
+                "Whoa, buddy! That tune's more out of tune than a broken guitar string!",
+                "Dude, seriously? My ears are bleeding! I'm all about the air guitar, but that was just noise!"
             }
         });
 
@@ -107,13 +107,13 @@ public class GhostDialogue : MonoBehaviour
         {
             positiveComments = new string[]
             {
-                "Ooh la la! That melody is as delicious as a freshly baked croissant! With your musical skills and my culinary flair, we shall create a masterpiece!",
-                "Magnifique! Your summoning has brought me great joy! Let's continue to cook up some delicious tunes together. Merci beaucoup for including me in your musical feast!"
+                "Ooh la la! That melody is as delicious as a freshly baked croissant!",
+                "Magnifique! Your summoning has brought me great joy!"
             },
             negativeComments = new string[]
             {
-                "Mon dieu! That melody's more burnt than a pizza left in the oven too long! Let's try a different recipe, shall we?",
-                "Sacrebleu! Your musical concoction tastes as sour as an expired soufflé! Let's spice things up with some proper notes, shall we?"
+                "Mon dieu! That melody's more burnt than a pizza left in the oven too long!",
+                "Sacrebleu! Your musical concoction tastes as sour as an expired soufflé!"
             }
         });
 
@@ -122,12 +122,12 @@ public class GhostDialogue : MonoBehaviour
             positiveComments = new string[]
             {
                 "Excellent! Your melody is as precise as a well-crafted algorithm!",
-                "Incredible! Your summoning has activated my circuits! Your skills are as impressive as a well-optimized code!"
+                "Incredible! Your summoning has activated my circuits!"
             },
             negativeComments = new string[]
             {
-                "Error! Error! Your melody is as buggy as a poorly written script! Let's debug this musical code, shall we?",
-                "Hmm, interesting choice... if you're aiming for the worst performance in the history of music! Let's analyze and optimize, shall we?"
+                "Error! Error! Your melody is as buggy as a poorly written script!",
+                "Hmm, interesting choice... if you're aiming for the worst performance in the history of music!"
             }
         });
 
@@ -136,12 +136,12 @@ public class GhostDialogue : MonoBehaviour
             positiveComments = new string[]
             {
                 "Yeehaw! Smooth as a ride on the open range! Let's keep the music flowing like a cool breeze.",
-                "Well, howdy there, partner! Your music is as lively as a hoedown on a Saturday night! Let's keep the tunes coming and the good times rolling!"
+                "Well, howdy there, partner! Your music is as lively as a hoedown on a Saturday night!"
             },
             negativeComments = new string[]
             {
-                "Well, shucks! That tune's wilder than a bucking bronco at a rodeo! How about we rein it in and hit the right notes, partner?",
-                "Well, slap my chaps and call me disappointed! That tune's as out of tune as a cowpoke at a square dance! How about we lasso some melody, partner?"
+                "Well, shucks! That tune's wilder than a bucking bronco at a rodeo!",
+                "Well, slap my chaps and call me disappointed! That tune's as out of tune as a cowpoke at a square dance!"
             }
         });
 
@@ -154,8 +154,8 @@ public class GhostDialogue : MonoBehaviour
             },
             negativeComments = new string[]
             {
-                "Whoa, bro! That melody wiped out harder than a gnarly wipeout on a killer wave! Let's catch a better rhythm, dude!",
-                "Bummer, dude! That tune's as off-key as a surfer without a board! How about we catch a better wave, dude?"
+                "Whoa, bro! That melody wiped out harder than a gnarly wipeout on a killer wave!",
+                "Bummer, dude! That tune's as off-key as a surfer without a board!"
             }
         });
 
@@ -168,8 +168,8 @@ public class GhostDialogue : MonoBehaviour
             },
             negativeComments = new string[]
             {
-                "Fear not, citizen! Though your melody may be villainous, I, the Melodic Avenger, shall assist you in your quest for harmony! Onward, to a better tune!",
-                "Hold up, citizen! That melody's more villainous than a supervillain's evil laugh! Let's channel our inner hero and find the harmony, shall we?"
+                "Hold up, citizen! That melody's more villainous than a supervillain's evil laugh!",
+                "Uh-oh! That tune's as off-key as a superhero without superpowers!"
             }
         });
     }
