@@ -21,6 +21,7 @@ public class SequenceGenerator : MonoBehaviour
     public int currentDetuneLevel = 0; // 0 = detuned, 1 = medium, 2 = good
 
 
+
     private Dictionary<PianoKey, List<AudioClip>> keyToNote = new Dictionary<PianoKey, List<AudioClip>>();
     public static SequenceGenerator instance;
 
@@ -152,12 +153,17 @@ public class SequenceGenerator : MonoBehaviour
             currentDetuneLevel = 1;
         }
 
+        FindObjectOfType<GhostDialogue>().ShowCommentAndSpawnGhost(false);
+
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayClipAtPoint(failureSound, Camera.main.transform.position);
         yield return new WaitForSeconds(3.0f);
         playerSequence.Clear();
         GenerateSequence(Mathf.Max(3, currentSequence.Length - 1));
         StartCoroutine(IPlaySequence());
+
+        
+        
     }
 
     public IEnumerator IPlaySuccess()
@@ -172,12 +178,16 @@ public class SequenceGenerator : MonoBehaviour
             currentDetuneLevel = 1;
         }
 
+        FindObjectOfType<GhostDialogue>().ShowCommentAndSpawnGhost(true);
+
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayClipAtPoint(successSound, Camera.main.transform.position);
         yield return new WaitForSeconds(3.0f);
         playerSequence.Clear();
         GenerateSequence(currentSequence.Length + 1);
         StartCoroutine(IPlaySequence());
+
+        
 
     }
 

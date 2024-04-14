@@ -1,10 +1,19 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GhostDialogue : MonoBehaviour
 {
     public Dictionary<GhostType, GhostComments> ghostComments = new Dictionary<GhostType, GhostComments>();
+
+    public Sprite[] ghostSprites;
+    public GameObject ghostImageObject; // Reference to the pre-defined UI Image object
+
+
+    public GameObject currentGhost;
+
+    public TMPro.TextMeshProUGUI ghostText;
+    
 
     [System.Serializable]
     public class GhostComments
@@ -13,8 +22,45 @@ public class GhostDialogue : MonoBehaviour
         public string[] negativeComments;
     }
 
+    public void ShowCommentAndSpawnGhost(bool isCorrect)
+    {
+        ghostImageObject.SetActive(true);
+        
+        // Randomly select a GhostType
+        GhostType ghostType = (GhostType)Random.Range(0, ghostSprites.Length);
+
+        // Set the sprite of the pre-defined ghost image
+        Image ghostImage = ghostImageObject.GetComponent<Image>();
+        ghostImage.sprite = ghostSprites[(int)ghostType];
+
+        // Set the text of the spawned ghost
+        if (ghostText != null)
+        {
+            GhostComments comments = ghostComments[ghostType];
+            ghostText.text = GetRandomComment(isCorrect ? comments.positiveComments : comments.negativeComments);
+        }
+    }
+    
+    public void RemoveGhostAndText()
+    {
+        // Set the ghost image to inactive
+        ghostImageObject.SetActive(false);
+
+        // Clear the text
+        if (ghostText != null)
+        {
+            ghostText.text = "";
+        }
+    }
+    private string GetRandomComment(string[] comments)
+    {
+        int randomIndex = Random.Range(0, comments.Length);
+        return comments[randomIndex];
+    }
+
     private void Awake()
     {
+        RemoveGhostAndText();
         // ghostComments.Add(GhostType.Disco, new GhostComments
         // {
         //     positiveComments = new string[]
@@ -126,19 +172,6 @@ public class GhostDialogue : MonoBehaviour
                 "Hold up, citizen! That melody's more villainous than a supervillain's evil laugh! Let's channel our inner hero and find the harmony, shall we?"
             }
         });
-    }
-
-    public void ShowComment(GhostType ghostType, bool isCorrect)
-    {
-        GhostComments comments = ghostComments[ghostType];
-        string comment = isCorrect ? GetRandomComment(comments.positiveComments) : GetRandomComment(comments.negativeComments);
-        Debug.Log(comment); // You can replace Debug.Log with whatever method you use to display text in your game
-    }
-
-    private string GetRandomComment(string[] comments)
-    {
-        int randomIndex = Random.Range(0, comments.Length);
-        return comments[randomIndex];
     }
 }
 
