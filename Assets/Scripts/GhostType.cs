@@ -1,7 +1,7 @@
 public enum GhostType
 {
-    Disco,
-    Opera,
+    // Disco,
+    // Opera,
     Rockstar,
     Chef,
     Nerd,
