@@ -143,11 +143,11 @@ public class SequenceGenerator : MonoBehaviour
     public IEnumerator IPlayFailure()
     {
         // Check if length is shorter than 4
-        if (currentSequence.Length < midDetuneLevel)
+        if (currentSequence.Length - 1 < midDetuneLevel)
         {
             currentDetuneLevel = 0;
         }
-        else if (currentSequence.Length < goodDetuneLevel)
+        else if (currentSequence.Length - 1 < goodDetuneLevel)
         {
             currentDetuneLevel = 1;
         }
@@ -178,11 +178,11 @@ public class SequenceGenerator : MonoBehaviour
     public IEnumerator IPlaySuccess()
     {
         // Check if length is longer than 4
-        if (currentSequence.Length >= goodDetuneLevel)
+        if (currentSequence.Length + 1 >= goodDetuneLevel)
         {
             currentDetuneLevel = 2;
         }
-        else if (currentSequence.Length >= midDetuneLevel)
+        else if (currentSequence.Length + 1 >= midDetuneLevel)
         {
             currentDetuneLevel = 1;
         }

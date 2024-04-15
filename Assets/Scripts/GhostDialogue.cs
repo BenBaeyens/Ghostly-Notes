@@ -21,7 +21,7 @@ public class GhostDialogue : MonoBehaviour
     private string currentFullText; // The full text to be revealed
     private Coroutine revealCoroutine;
 
-    
+    private GhostType lastGhostType = (GhostType)(-1); // Track the last ghost type
 
     [System.Serializable]
     public class GhostComments
@@ -36,14 +36,15 @@ public class GhostDialogue : MonoBehaviour
         ghostImageObject.SetActive(true);
         textBackground.SetActive(true);
 
-        // Randomly select a GhostType
-        GhostType ghostType = (GhostType)Random.Range(0, ghostSprites.Length);
+        GhostType ghostType;
+        do {
+            ghostType = (GhostType)Random.Range(0, ghostSprites.Length);
+        } while (ghostType == lastGhostType);
+        lastGhostType = ghostType;
 
-        // Set the sprite of the pre-defined ghost image
         Image ghostImage = ghostImageObject.GetComponent<Image>();
         ghostImage.sprite = ghostSprites[(int)ghostType];
 
-        // Set the text of the spawned ghost
         if (ghostText != null)
         {
             GhostComments comments = ghostComments[ghostType];

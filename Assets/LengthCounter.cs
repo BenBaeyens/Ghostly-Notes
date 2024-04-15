@@ -14,7 +14,7 @@ public class LengthCounter : MonoBehaviour
     public void UpdateLength(int length){
         text.text = "length  " + IntToRoman(length);
 
-        if(length > 6){
+        if(length >= 6){
             text.color = victoryColor;
         }
         else
