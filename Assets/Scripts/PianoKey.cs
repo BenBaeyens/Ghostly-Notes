@@ -33,11 +33,6 @@ public class PianoKey : MonoBehaviour
         StartCoroutine(IUnpressWaiter());
     }
 
-    private void OnDestroy()
-    {
-        StopAllCoroutines();
-    }
-
     public void Hover()
     {
         if (isPressed)

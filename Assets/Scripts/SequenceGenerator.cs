@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SequenceGenerator : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class SequenceGenerator : MonoBehaviour
 
     public AudioClip successSound;
     public AudioClip failureSound;
+
+    private bool cont = false;
 
     public int midDetuneLevel = 4;
     public int goodDetuneLevel = 6;
@@ -48,8 +51,9 @@ public class SequenceGenerator : MonoBehaviour
         }
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitForSeconds(3.5f);
 
         for (int i = 0; i < keys.Length; i++)
         {
@@ -69,15 +73,9 @@ public class SequenceGenerator : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        instance = null;
-        StopAllCoroutines();
-    }
-
-
     public void GenerateSequence(int length)
     {
+        cont = false;
         currentSequence = new int[length];
         for (int i = 0; i < length; i++)
         {
@@ -87,6 +85,7 @@ public class SequenceGenerator : MonoBehaviour
 
     public IEnumerator IPlaySequence()
     {
+        GetComponent<LengthCounter>()?.UpdateLength(currentSequence.Length);
         foreach (int keyIndex in currentSequence)
         {
             PlayNote(keyIndex, false);
@@ -157,7 +156,17 @@ public class SequenceGenerator : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayClipAtPoint(failureSound, Camera.main.transform.position);
-        yield return new WaitForSeconds(3.0f);
+        
+        while (!cont)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(2.5f);
+
+        FindObjectOfType<GhostDialogue>()?.RemoveGhostAndText();
+        yield return new WaitForSeconds(1f);
+
         playerSequence.Clear();
         GenerateSequence(Mathf.Max(3, currentSequence.Length - 1));
         StartCoroutine(IPlaySequence());
@@ -182,14 +191,22 @@ public class SequenceGenerator : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayClipAtPoint(successSound, Camera.main.transform.position);
-        yield return new WaitForSeconds(3.0f);
+        while (!cont)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(2.5f);
+        FindObjectOfType<GhostDialogue>()?.RemoveGhostAndText();
+        yield return new WaitForSeconds(1f);
         playerSequence.Clear();
         GenerateSequence(currentSequence.Length + 1);
         StartCoroutine(IPlaySequence());
-
-        
-
     }
 
+
+    public void ContinueWithNextSequence(){
+        cont = true;
+    }
 
 }

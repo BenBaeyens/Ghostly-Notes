@@ -71,6 +71,8 @@ public class GhostDialogue : MonoBehaviour
             ghostText.text += currentFullText[i];
             yield return new WaitForSeconds(characterRevealSpeed); // Wait for a short duration
         }
+
+        SequenceGenerator.instance.ContinueWithNextSequence();
     }
 
 
