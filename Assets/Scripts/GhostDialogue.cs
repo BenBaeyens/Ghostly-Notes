@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
 public class GhostDialogue : MonoBehaviour
 {
@@ -10,11 +11,16 @@ public class GhostDialogue : MonoBehaviour
     public GameObject ghostImageObject; // Reference to the pre-defined UI Image object
 
     public GameObject textBackground;
+    public float characterRevealSpeed = 0.05f; // Speed of character reveal
 
 
     public GameObject currentGhost;
 
     public TMPro.TextMeshProUGUI ghostText;
+
+    private string currentFullText; // The full text to be revealed
+    private Coroutine revealCoroutine;
+
     
 
     [System.Serializable]
@@ -26,6 +32,7 @@ public class GhostDialogue : MonoBehaviour
 
     public void ShowCommentAndSpawnGhost(bool isCorrect)
     {
+        RemoveGhostAndText();
         ghostImageObject.SetActive(true);
         textBackground.SetActive(true);
 
@@ -40,7 +47,38 @@ public class GhostDialogue : MonoBehaviour
         if (ghostText != null)
         {
             GhostComments comments = ghostComments[ghostType];
-            ghostText.text = GetRandomComment(isCorrect ? comments.positiveComments : comments.negativeComments);
+            string comment = GetRandomComment(isCorrect ? comments.positiveComments : comments.negativeComments);
+            StartCharacterReveal(comment);
+        }
+    }
+
+    public void StartCharacterReveal(string text)
+    {
+        currentFullText = text;
+        ghostText.text = "";
+        if (revealCoroutine != null)
+        {
+            StopCoroutine(revealCoroutine);
+        }
+        revealCoroutine = StartCoroutine(RevealTextCharacterByCharacter());
+    }
+
+    private IEnumerator RevealTextCharacterByCharacter()
+    {
+        for (int i = 0; i < currentFullText.Length; i++)
+        {
+            // Add one character to the displayed text
+            ghostText.text += currentFullText[i];
+            yield return new WaitForSeconds(characterRevealSpeed); // Wait for a short duration
+        }
+    }
+
+
+    public void StopCharacterReveal()
+    {
+        if (revealCoroutine != null)
+        {
+            StopCoroutine(revealCoroutine);
         }
     }
     
