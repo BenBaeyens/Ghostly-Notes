@@ -183,7 +183,7 @@ public class GhostDialogue : MonoBehaviour
             negativeComments = new string[]
             {
                 "Well, shucks! That tune's wilder than a bucking bronco at a rodeo!",
-                "Well, slap my chaps and call me disappointed! That tune's as out of tune as a cowpoke at a square dance!"
+                "Well, slap my chaps and call me disappointed! That melody's as off-key as a broken banjo!"
             }
         });
 
