@@ -9,6 +9,8 @@ public class GhostDialogue : MonoBehaviour
     public Sprite[] ghostSprites;
     public GameObject ghostImageObject; // Reference to the pre-defined UI Image object
 
+    public GameObject textBackground;
+
 
     public GameObject currentGhost;
 
@@ -25,6 +27,7 @@ public class GhostDialogue : MonoBehaviour
     public void ShowCommentAndSpawnGhost(bool isCorrect)
     {
         ghostImageObject.SetActive(true);
+        textBackground.SetActive(true);
 
         // Randomly select a GhostType
         GhostType ghostType = (GhostType)Random.Range(0, ghostSprites.Length);
@@ -45,6 +48,7 @@ public class GhostDialogue : MonoBehaviour
     {
         // Set the ghost image to inactive
         ghostImageObject.SetActive(false);
+        textBackground.SetActive(false);
 
         // Clear the text
         if (ghostText != null)
