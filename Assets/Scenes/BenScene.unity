@@ -1362,6 +1362,7 @@ GameObject:
   - component: {fileID: 1011266474}
   - component: {fileID: 1011266476}
   - component: {fileID: 1011266475}
+  - component: {fileID: 1011266477}
   m_Layer: 2
   m_Name: GhostImage
   m_TagString: Untagged
@@ -1426,6 +1427,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011266473}
   m_CullTransparentMesh: 1
+--- !u!114 &1011266477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011266473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554dc09d3333f6a469a20c8351805414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatSpeed: 2.5
+  floatHeight: 2
 --- !u!1 &1018295011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1769,10 @@ PrefabInstance:
       propertyPath: ghostText
       value: 
       objectReference: {fileID: 262952077}
+    - target: {fileID: 6382354880058145613, guid: 888fc8a7a027ea841bdc651af9462220, type: 3}
+      propertyPath: textBackground
+      value: 
+      objectReference: {fileID: 1681260654}
     - target: {fileID: 6382354880058145613, guid: 888fc8a7a027ea841bdc651af9462220, type: 3}
       propertyPath: ghostImageObject
       value: 
