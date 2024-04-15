@@ -7,5 +7,6 @@ public enum GhostType
     Nerd,
     Cowboy,
     Surfer,
-    Superhero
+    Superhero,
+    Jerry 
 }

@@ -176,6 +176,20 @@ public class GhostDialogue : MonoBehaviour
                 "Uh-oh! That tune's as off-key as a superhero without superpowers!"
             }
         });
+
+        ghostComments.Add(GhostType.Jerry, new GhostComments
+        {
+            positiveComments = new string[]
+            {
+                "Consider my timbers shivered! I'm Jerry!",
+                "I'm Jerry! :)"
+            },
+            negativeComments = new string[]
+            {
+                "This is making me sad.. I'm Jerry! :(",
+                "I'm Jerry.. :("
+            }
+        });
     }
 }
 
